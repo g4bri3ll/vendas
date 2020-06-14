@@ -1,7 +1,11 @@
 <?php
 
 class Pessoa{
-	
+
+	function __construct() {
+
+	}
+
 	private $id;
 	private $cpf;
 	private $nome_pessoa;
@@ -30,8 +34,21 @@ class Pessoa{
 	public function __get($atrib){
 		return $this->$atrib;
 	}
-	
-}
 
+	//Retorna o ultimo id Cadastro na base de dados
+	function ultimoIdPessoa(){
+
+		//Retorna o ultimo ID do usuário
+		$cliDAO = new clientesDAO();
+		$arrayUltimoId = $cliDAO->ListaUltimaPessoa();
+
+		$id = 0;
+		foreach ($arrayUltimoId as $array => $value) {
+			$id = $value['id'];
+		}
+
+		return $id;
+	}
+}
 
 ?>

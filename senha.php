@@ -1,5 +1,9 @@
+<?php
+session_start();
+session_destroy();
+?>
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -37,7 +41,7 @@
 	<div class="container-fluid">
 		<div class="row" align="center">
 			<div class="col-md-6">
-				<a href="acompanharPedidos.html">
+				<a href="acompanharPedidos.php">
 					<div class="card">
 						<div class="header">
 							<h4 class="title">Acompanhar pedido</h4>
@@ -49,7 +53,7 @@
 				</a>
 			</div>
 			<div class="col-md-6">
-				<a href="selecionarPedidos.html">
+				<a href="informeCracha.php">
 					<div class="card">
 						<div class="header">
 							<h4 class="title">Selecionar pedido</h4>

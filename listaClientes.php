@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+include "C:\\xampp\htdocs\Controle_vendas\Model\DAO\ClientesDAO.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -47,52 +52,169 @@
 
             <ul class="nav">
                 <li>
-                    <a href="dashboard.html">
+                    <a href="index.php">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="#homeProduto" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>Lanches</p>
                     </a>
-                </li>
-                <li class="active">
-                    <a href="table.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
+	                <ul class="collapse list-unstyled" id="homeProduto">
+	                    <li>
+	                    	<a class="subMenu" href="criarLanches.php">Criar Lanches</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaLanches.php">Lista de Lanches</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="criarOpcaoAdicionais.php">Cadastrar Opções adicionais</a>
+	                    </li>
+                        <li>
+                            <a class="subMenu" href="cadastrarIngredientes.php">Cadastrar ingredientes lanches</a>
+                        </li>
+	                </ul>
                 </li>
                 <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
+                    <a href="#homeClientes" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Clientes</p>
                     </a>
+	                <ul class="collapse list-unstyled" id="homeClientes">
+	                    <li>
+	                    	<a class="subMenu" href="cadastroClientes.php">Cadastrar Clientes</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaClientes.php">Lista de Clientes</a>
+	                    </li>
+                        <li>
+                            <a class="subMenu" href="#">Lista Clientes Fiados</a>
+                        </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 4</a>
+	                    </li>
+	                </ul>
                 </li>
                 <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
+                    <a href="#homeFuncionarios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Funcionarios</p>
                     </a>
+	                <ul class="collapse list-unstyled" id="homeFuncionarios">
+	                    <li>
+	                    	<a class="subMenu" href="cadastroFuncionarios.php">Cadastrar Funcionarios</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaFuncionarios.php">Lista de Funcionarios</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 3</a>
+	                    </li>
+	                </ul>
                 </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                <li>
+                    <a href="#homeFornecedor" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Fornecedor</p>
                     </a>
+	                <ul class="collapse list-unstyled" id="homeFornecedor">
+	                    <li>
+	                    	<a class="subMenu" href="cadastrarFornecedor.php">Cadastro Fornecedor</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaFornecedor.php">Lista de Fornecedor</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 3</a>
+	                    </li>
+	                </ul>
+                </li>
+                <li>
+                    <a href="#homePgto" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Formas de Pgto</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homePgto">
+                        <li>
+                            <a class="subMenu" href="cadastrarFormaPgto.php">Cadastrar a forma de pagamento</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="listaFormaPgto.php">Lista as formas de pagamento</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homeFiado" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Configurações</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeFiado">
+                        <li>
+                            <a class="subMenu" href="cadastrarClienteFiados.php">Cadastrar Clientes Fiado</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="configurarContaCliente.php">Clientes X Forma de pgto</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="configClientesXFavoritos.php">Clientes X Favoritos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homePainel" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Painel Administrativo</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homePainel">
+                        <li>
+                            <a class="subMenu" href="#">Cadastrar Empresa</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Conceder permisssão de acesso</a>
+                        </li>
+						<li>
+                            <a class="subMenu" href="#">Lista de permissão de acessos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homerelatorio" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Relatorios</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homerelatorio">
+                        <li>
+                            <a class="subMenu" href="#">Nomes funcionarios</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Vendas por datas</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Vendas X Forma de pgto</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homeVendas" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Vendas</p>
+                    </a>
+	                <ul class="collapse list-unstyled" id="homeVendas">
+	                    <li>
+	                    	<a class="subMenu" href="cadastrarLanchesVendidos.php">Cadastro de lanches vendidos</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaVendas.php">Lista de Vendas</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 3</a>
+	                    </li>
+	                </ul>
                 </li>
             </ul>
     	</div>
@@ -179,6 +301,11 @@
             </div>
         </nav>
 
+        <?php
+        $cliDAO = new ClientesDAO();
+        $arrayCliente = $cliDAO->ListaDeClientes();
+        ?>
+
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -200,125 +327,27 @@
                                         <th>Ações</th>
                                     </thead>
                                     <tbody>
+                                        <?php foreach ($arrayCliente as $cliDAO => $value) { ?>
                                         <tr>
-                                        	<td></td>
-                                        	<td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                        	<td><?php echo $value['idd_cliente']; ?></td>
+                                            <td><?php echo $value['nome_pessoa']; ?></td>
+                                            <td><?php echo $value['telefone']; ?></td>
+                                            <td><?php echo $value['email']; ?></td>
+                                            <td><?php echo $value['cracha']; ?></td>
+                                            <td><?php echo $value['endereco']; ?></td>
+                                            <td><img src="Fotos/Clientes/<?php echo $value['foto']; ?>" height="100%" width="100%"></td>
+                                            <td>
+                                            <a href="#"><i class="pe-7s-trash"></i></a> | 
+                                            <a href="#"><i class="pe-7s-edit"></i></a>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
 
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="col-md-12">
-                        <div class="card card-plain">
-                            <div class="header">
-                                <h4 class="title">Table on Plain Background</h4>
-                                <p class="category">Here is a subtitle for this table</p>
-                            </div>
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <th>ID</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
         </div>

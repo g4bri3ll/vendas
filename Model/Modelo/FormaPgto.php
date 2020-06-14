@@ -1,10 +1,11 @@
 <?php
 
-class Forma_pgto {
+class FormaPgto{
 	
 	private $id;
-	private $nome_pgto;
 	private $status;
+	private $formaPgto;
+	private $porcetagem;
 	
 	
 	//Atribuir o set a todos os atributos

@@ -1,11 +1,14 @@
+<?php
+session_start();
+?>
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Seleção de pedidos</title>
+	<title>Pedido</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -32,37 +35,46 @@
 </head>
 <body>
 
-<div class="wrapper">
-	<div class="content" style="padding-top: 5%;">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
+<?php
+if (!empty($_SESSION['cracha'])) {
+?>
+
+<div class="content" style="padding-top: 5%;">
+	<div class="container-fluid">
+		<div class="row" align="center">
+			<div class="col-md-6">
+				<a href="listaBebidas.php">
 					<div class="card">
 						<div class="header">
-							<h4 class="title">Informe seu crachá</h4>
+							<h4 class="title">BEBIDAS</h4>
+							<hr />
+							<img class="" src="Fotos/Lanches/bebidas.PNG" alt="..."/>
 						</div>
-						<div class="content">
-							<form>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>CRACHÁ</label>
-											<input type="text" class="form-control" placeholder="Home Crachá">
-										</div>
-									</div>
-								</div>
-								<button type="submit" class="btn btn-info btn-fill pull-right">Enviar</button>
-								<a href="senha.html" class="btn btn-info btn-fill pull-left">Retornar</a>
-								<div class="clearfix"></div>
-							</form>
-						</div>
+					<br /><br />
 					</div>
-				</div>
+				</a>
+			</div>
+			<div class="col-md-6">
+				<a href="listaComidas.php">
+					<div class="card">
+						<div class="header">
+							<h4 class="title">COMIDAS</h4>
+							<hr />							
+							<img class="" src="Fotos/Lanches/comidas.PNG" alt="..."/>
+						</div>
+						<br /><br />
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
 
+<?php 
+} else {
+	header('Location: senha.php');
+} 
+?>
 
 </body>
 

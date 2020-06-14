@@ -1,14 +1,14 @@
 <?php
 
-class Produto {
+class Favorito {
 	
 	private $id;
-	private $nome_produtos;
-	private $valor_produtos;
-	private $codigo_barra;
-	private $id_fornecedor;
-	private $token;
 	private $status;
+	private $idCliente;
+	private $dataCadastro;
+	private $codigo;
+	private $idPedido;
+	private $qtd;
 	
 	
 	//Atribuir o set a todos os atributos

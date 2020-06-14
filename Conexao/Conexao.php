@@ -27,7 +27,7 @@ class Conexao {
 	}
 	
 	function getBD(){
-		return 'vendas';
+		return 'controle_vendas';
 	}
 	
 	function closeConnect(){

@@ -4,6 +4,7 @@ class Vendedor extends Pessoa{
 	
 	private $id;
 	private $status;
+	private $idPessoa;
 	
 	
 	//Atribuir o set a todos os atributos

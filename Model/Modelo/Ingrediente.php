@@ -1,13 +1,15 @@
 <?php
 
-class Ingrediente {
+class Ingrediente{
 	
 	private $id;
-	private $nome_ingredientes;
-	private $valor_ingredientes;
-	private $id_produtos;
+	private $nome;
 	private $status;
+	private $dataCadastro;
+	private $idLanche;
+	private $qtd;
 	
+
 	
 	//Atribuir o set a todos os atributos
 	public function __set($atrib, $value){

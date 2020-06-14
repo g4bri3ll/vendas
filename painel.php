@@ -1,11 +1,17 @@
+<?php
+include "C:\\xampp\htdocs\Controle_vendas\Model\DAO\LancheDAO.php";
+
+date_default_timezone_set('America/Sao_Paulo');
+?>
 <!doctype html>
-<html lang="en">
+<html>
 <head>
+	<meta http-equiv="refresh" content="60">
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>Acompanhamento de lanches solicitado</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -32,68 +38,65 @@
 </head>
 <body>
 
+<?php
+$dataHoje = date('Y-m-d');
+
+//Lista todos os pedidos de hoje
+$lanDAO = new LancheDAO();
+$arrayPedidos = $lanDAO->listaPedidosPainel($dataHoje);
+?>
+
 <div class="wrapper">
-	<div class="content" style="padding-top: 5%;">
+	<div class="content" style="padding-top: 2%;">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
 					<div class="header">
-					<h4 class="title">ACOMPANHAR PEDIDO DOS CLIENTES</h4>
-					<p class="category">Pedidos feito no dia: 27/04/2020</p>
+					<h4 class="title">ACOMPANHAMENTOS DE PEDIDOS</h4>
+					<p class="category">Pedidos feitos no dia: <?php echo date('d/m/Y', strtotime($dataHoje)); ?></p>
 					</div>
 						<div class="content table-responsive table-full-width">
 							<table class="table table-hover table-striped">
 								<thead>
 									<th>Nª Pedido</th>
-									<th>Nome</th>
-									<th>Valor</th>
-									<th>Data do pedido</th>
-									<th>Status</th>
+									<th>Nome do cliente</th>
+									<th>Nome do pedido</th>
+									<th>Quantidade</th>
+									<th>Data</th>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Evandro da silva gomes</td>
-										<td>$36,738</td>
-										<td>27/04/2020</td>
-										<td>Aberto</td>
+
+									<?php 
+									foreach ($arrayPedidos as $lanDAO => $value) { 
+									
+										$idPedido = $value['id']; 
+										//Pegar os nomes do lanches pelo id do pedido
+										$lanDAO = new LancheDAO(); 
+										$arrayLanches = $lanDAO->listaLanchesPainel($idPedido);
+									?>
+									<tr style="background-color: <?php echo $cor; ?>">
+										<td><?php echo $value['n_pedido']; ?></td>
+										<td><?php echo $value['nome_pessoa']; ?></td>
+										<td>
+											<?php 
+											foreach ($arrayLanches as $lanDAO => $valor) { 
+												echo $valor['nome'] . "<br />";
+											} 
+											?>
+										</td>
+										<td>
+											<?php 
+											foreach ($arrayLanches as $lanDAO => $valor) {
+												echo $valor['qtd'] . "<br />";
+											} 
+											?>
+										</td>
+										<td><?php echo date("d/m/Y", strtotime($value['data_comprado'])); ?></td>
 									</tr>
-									<tr>
-										<td>2</td>
-										<td>Priscila Lívia Figueiredo</td>
-										<td>$23,789</td>
-										<td>27/04/2020</td>
-										<td>Aberto</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Eloá Luna Corte Real</td>
-										<td>$56,142</td>
-										<td>27/04/2020</td>
-										<td>Aberto</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>Nina Lara Giovanna da Silva</td>
-										<td>$38,735</td>
-										<td>27/04/2020</td>
-										<td>Em andamento</td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>Raul Yago Igor Almada</td>
-										<td>$63,542</td>
-										<td>27/04/2020</td>
-										<td>Em andamento</td>
-									</tr>
-									<tr>
-										<td>6</td>
-										<td>Maya Carolina Rocha</td>
-										<td>$78,615</td>
-										<td>27/04/2020</td>
-										<td>Em andamento</td>
-									</tr>
+									<?php }//Fechar o foreach da listagem
+									?>
+
 								</tbody>
 							</table>
 

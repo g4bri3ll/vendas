@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Criação de produtos para a venda</title>
+	<title>Cadastrar a forma de pagamento</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -40,8 +40,8 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="#" class="simple-text">
+                    Sistema de lanches
                 </a>
             </div>
 
@@ -52,44 +52,167 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="#">
+                <li>
+                    <a href="#homeProduto" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="pe-7s-user"></i>
-                        <p>Criar Produtos</p>
+                        <p>Lanches</p>
                     </a>
+	                <ul class="collapse list-unstyled" id="homeProduto">
+	                    <li>
+	                    	<a class="subMenu" href="criarLanches.php">Criar Lanches</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaLanches.php">Lista de Lanches</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="criarOpcaoAdicionais.php">Cadastrar Opções adicionais</a>
+	                    </li>
+                        <li>
+                            <a class="subMenu" href="cadastrarIngredientes.php">Cadastrar ingredientes lanches</a>
+                        </li>
+	                </ul>
                 </li>
                 <li>
-                    <a href="cadastroIngredientes.php">
-                        <i class="pe-7s-note2"></i>
-                        <p>Cadastrar Ingredientes</p>
+                    <a href="#homeClientes" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Clientes</p>
                     </a>
+	                <ul class="collapse list-unstyled" id="homeClientes">
+	                    <li>
+	                    	<a class="subMenu" href="cadastroClientes.php">Cadastrar Clientes</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaClientes.php">Lista de Clientes</a>
+	                    </li>
+                        <li>
+                            <a class="subMenu" href="#">Lista Clientes Fiados</a>
+                        </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 4</a>
+	                    </li>
+	                </ul>
                 </li>
                 <li>
-                    <a href="cadastroClientes.php">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Cadastrar Clientes</p>
+                    <a href="#homeFuncionarios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Funcionarios</p>
                     </a>
+	                <ul class="collapse list-unstyled" id="homeFuncionarios">
+	                    <li>
+	                    	<a class="subMenu" href="cadastroFuncionarios.php">Cadastrar Funcionarios</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaFuncionarios.php">Lista de Funcionarios</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 3</a>
+	                    </li>
+	                </ul>
                 </li>
                 <li>
-                    <a href="cadastroFuncionarios.php">
-                        <i class="pe-7s-science"></i>
-                        <p>Cadastrar Funcionarios</p>
+                    <a href="#homeFornecedor" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Fornecedor</p>
                     </a>
+	                <ul class="collapse list-unstyled" id="homeFornecedor">
+	                    <li>
+	                    	<a class="subMenu" href="cadastrarFornecedor.php">Cadastro Fornecedor</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaFornecedor.php">Lista de Fornecedor</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 3</a>
+	                    </li>
+	                </ul>
                 </li>
                 <li>
-                    <a href="cadastrarFornecedor.php">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Cadastro de fornecedor</p>
+                    <a href="#homePgto" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Formas de Pgto</p>
                     </a>
+                    <ul class="collapse list-unstyled" id="homePgto">
+                        <li>
+                            <a class="subMenu" href="cadastrarFormaPgto.php">Cadastrar a forma de pagamento</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="listaFormaPgto.php">Lista as formas de pagamento</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Home 3</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="cadastrarLanchesVendidos.php">
-                        <i class="pe-7s-bell"></i>
-                        <p>Cadastro de lanches vendidos</p>
+                    <a href="#homeFiado" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Configurações</p>
                     </a>
+                    <ul class="collapse list-unstyled" id="homeFiado">
+                        <li>
+                            <a class="subMenu" href="cadastrarClienteFiados.php">Cadastrar Clientes Fiado</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="configurarContaCliente.php">Clientes X Forma de pgto</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="configClientesXFavoritos.php">Clientes X Favoritos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homePainel" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Painel Administrativo</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homePainel">
+                        <li>
+                            <a class="subMenu" href="#">Cadastrar Empresa</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Conceder permisssão de acesso</a>
+                        </li>
+						<li>
+                            <a class="subMenu" href="#">Lista de permissão de acessos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homerelatorio" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Relatorios</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homerelatorio">
+                        <li>
+                            <a class="subMenu" href="#">Nomes funcionarios</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Vendas por datas</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Vendas X Forma de pgto</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homeVendas" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Vendas</p>
+                    </a>
+	                <ul class="collapse list-unstyled" id="homeVendas">
+	                    <li>
+	                    	<a class="subMenu" href="cadastrarLanchesVendidos.php">Cadastro de lanches vendidos</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="listaVendas.php">Lista de Vendas</a>
+	                    </li>
+	                    <li>
+	                    	<a class="subMenu" href="#">Home 3</a>
+	                    </li>
+	                </ul>
                 </li>
             </ul>
-    	</div>
+        </div>
     </div>
 
     <div class="main-panel">
@@ -179,46 +302,36 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+
+                            <?php if (!empty($_GET['cad'])) { ?>
+                                <br /><div class="alert alert-success">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Forma de pagamento cadastrado com sucesso !!!! </b></span>
+                                </div>
+                            <?php } ?>
+
                             <div class="header">
-                                <h4 class="title">Criar produtos</h4>
+                                <h4 class="title">Cadastrar as formas de pagamentos</h4>
                             </div>
                             <div class="content">
-                                <form>
+                                <form action="Controller/ControllerFormaPgto.php" method="POST" >
                                     
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-9">
                                             <div class="form-group">
-                                                <label>Nome do produto</label>
-                                                <input type="text" class="form-control" placeholder="nome do produto" name="nomeProduto"/>
+                                                <label>Nome da forma de pagamento</label>
+                                                <input type="text" class="form-control" placeholder="Crédito, Débito, Dinheiro, Fiado" name="pgto"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Porcetagem da cobrança</label>
+                                                <input type="number" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" class="form-control" placeholder="10%" name="porcetagem"/>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Valor do produto</label>
-                                                <input type="number" class="form-control" name="valor">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Foto do produto</label>
-                                                <input type="file" class="form-control" name="foto"/>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-info btn-fill pull-right">Criar produto</button>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Cadastrar forma de pagamento</button>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>

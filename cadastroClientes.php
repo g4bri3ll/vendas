@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +35,7 @@
 
     <style type="text/css">
     	.subMenu{
-    		padding-left: 10%;
+    		padding-left: 13%;
     	}
     </style>
 </head>
@@ -46,8 +49,8 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="#" class="simple-text">
+                    Sistema de lanches
                 </a>
             </div>
 
@@ -61,18 +64,21 @@
                 <li>
                     <a href="#homeProduto" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="pe-7s-user"></i>
-                        <p>Produtos</p>
+                        <p>Lanches</p>
                     </a>
 	                <ul class="collapse list-unstyled" id="homeProduto">
 	                    <li>
-	                    	<a class="subMenu" href="criarProdutos.php">Criar Produtos</a>
+	                    	<a class="subMenu" href="criarLanches.php">Criar Lanches</a>
 	                    </li>
 	                    <li>
-	                    	<a class="subMenu" href="listaProdutos.php">Lista de Produtos</a>
+	                    	<a class="subMenu" href="listaLanches.php">Lista de Lanches</a>
 	                    </li>
 	                    <li>
-	                    	<a class="subMenu" href="cadastroIngredientes.php">Cadastrar Ingredientes</a>
+	                    	<a class="subMenu" href="criarOpcaoAdicionais.php">Cadastrar Opções adicionais</a>
 	                    </li>
+                        <li>
+                            <a class="subMenu" href="cadastrarIngredientes.php">Cadastrar ingredientes lanches</a>
+                        </li>
 	                </ul>
                 </li>
                 <li class="active">
@@ -87,8 +93,11 @@
 	                    <li>
 	                    	<a class="subMenu" href="listaClientes.php">Lista de Clientes</a>
 	                    </li>
+                        <li>
+                            <a class="subMenu" href="#">Lista Clientes Fiados</a>
+                        </li>
 	                    <li>
-	                    	<a class="subMenu" href="#">Home 3</a>
+	                    	<a class="subMenu" href="#">Home 4</a>
 	                    </li>
 	                </ul>
                 </li>
@@ -125,6 +134,74 @@
 	                    	<a class="subMenu" href="#">Home 3</a>
 	                    </li>
 	                </ul>
+                </li>
+                <li>
+                    <a href="#homePgto" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Formas de Pgto</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homePgto">
+                        <li>
+                            <a class="subMenu" href="cadastrarFormaPgto.php">Cadastrar a forma de pagamento</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="listaFormaPgto.php">Lista as formas de pagamento</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homeFiado" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Configurações</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeFiado">
+                        <li>
+                            <a class="subMenu" href="cadastrarClienteFiados.php">Cadastrar Clientes Fiado</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="configurarContaCliente.php">Clientes X Forma de pgto</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="configClientesXFavoritos.php">Clientes X Favoritos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homePainel" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Painel Administrativo</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homePainel">
+                        <li>
+                            <a class="subMenu" href="#">Cadastrar Empresa</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Conceder permisssão de acesso</a>
+                        </li>
+						<li>
+                            <a class="subMenu" href="#">Lista de permissão de acessos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homerelatorio" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="pe-7s-user"></i>
+                        <p>Relatorios</p>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homerelatorio">
+                        <li>
+                            <a class="subMenu" href="#">Nomes funcionarios</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Vendas por datas</a>
+                        </li>
+                        <li>
+                            <a class="subMenu" href="#">Vendas X Forma de pgto</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#homeVendas" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -234,6 +311,21 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+
+                            <?php if (!empty($_SESSION['success'])) { ?>
+                                <br /><div class="alert alert-success">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Cliente cadastrado com sucesso !!!! </b></span>
+                                </div>
+                            <?php } ?>
+
+                            <?php if (!empty($_SESSION['error'])) { ?>
+                                <br /><div class="alert alert-danger">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> O crachá já foi cadastrado !!! </b></span>
+                                </div>
+                            <?php } ?>
+
                             <div class="header">
                                 <h4 class="title">Cadastro de clientes</h4>
                             </div>
@@ -337,6 +429,10 @@
     </div>
 </div>
 
+<?php 
+unset($_SESSION['success']);
+unset($_SESSION['error']);
+?>
 
 </body>
 
